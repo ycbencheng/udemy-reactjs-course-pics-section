@@ -3,9 +3,11 @@ import React, { Component } from "react";
 class SearchBar extends Component {
   state = { term: "Default" };
 
-  handleFormSubmit(event) {
+  handleFormSubmit = (event) => {
     event.preventDefault();
-  }
+
+    this.props.onSubmit(this.state.term);
+  };
 
   render() {
     return (
