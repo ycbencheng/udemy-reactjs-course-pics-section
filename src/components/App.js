@@ -4,8 +4,8 @@ import axios from "axios";
 import SearchBar from "./SearchBar";
 
 class App extends Component {
-  handleSearchSubmit(term) {
-    axios.get("https://api.unsplash.com/search/photos", {
+  async handleSearchSubmit(term) {
+    const response = await axios.get("https://api.unsplash.com/search/photos", {
       params: {
         query: term,
       },
@@ -14,6 +14,8 @@ class App extends Component {
           "Client-ID ce166e6fca53ac9752979b1d31fe76f4d9006012abefeec9f8ff595f2ba29176",
       },
     });
+
+    console.log("Response", response);
   }
 
   render() {
