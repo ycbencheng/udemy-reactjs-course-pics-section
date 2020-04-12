@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class SearchBar extends Component {
-  state = { term: "Default" };
+  state = { term: "" };
 
   handleFormSubmit = (event) => {
     event.preventDefault();
